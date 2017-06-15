@@ -11,7 +11,7 @@ api.post('/director',
     DirectorController.midPost,
     DirectorController.postDirector
     );
-api.get('/directores',
+api.get('/directores/:paisId?',
         DirectorController.initGetDirectores,
         DirectorController.getDirectores);
 

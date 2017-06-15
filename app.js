@@ -7,6 +7,7 @@ var app = express();
 
 var pais_routes = require('./routes/pais')
 var director_routes = require('./routes/director')
+var pelicula_routes = require('./routes/pelicula')
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -23,7 +24,8 @@ app.use(function(req , res, next){
 });
 
 app.use('/api', pais_routes);
-app.use('/api', director_routes)
+app.use('/api', director_routes);
+app.use('/api', pelicula_routes);
 
 
 module.exports = app;

@@ -106,6 +106,7 @@ function getDirectores(req,res){
         }
     });
 }
+
 module.exports = {
     initPost,
     midPost,
