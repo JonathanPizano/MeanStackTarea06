@@ -15,6 +15,10 @@ api.get('/peliculas/:directorId?',
         PeliculaController.initGetPeliculas,
         PeliculaController.getPeliculas);
 api.get('/pelicula/:id?', PeliculaController.getPelicula);
+api.put('/pelicula/:peliculaId?',
+    PeliculaController.initPutPel,
+    PeliculaController.midPutPel,
+    PeliculaController.almostPutPel,
+    PeliculaController.putPelicula);
 
-
-module.exports = api;    
+module.exports = api;

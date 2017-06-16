@@ -179,3 +179,43 @@
         "_id": "5941f64c583faa250835b07b"
     }
 }
+
+//////////////
+
+function initPut(req, res, next){
+    if(Object.keys(req.body).length === 0) {
+        res.status(409).send({message: 'Por favor envía un cuerpo'})
+    } else {
+        if(!req.params.peliculaId){
+            res.status(409).send({message: 'Por favor envía un id de pais'})
+        } else {
+            req.peliculaFounded = {}
+            next()
+        }
+    }
+}
+
+function midPut(req, res, next){
+    Pelicula.findByIdAndUpdate(req.params.peliculaId, req.body, function(err, peliculaUpdated){
+        if(err){
+            res.status(409).send({ message: 'Conflicto', err: err})
+        } else {
+            if(!peliculaUpdated){
+                res.status(404).send({ message: 'No se encontro la pelicula con el id proporcionado'})
+            } else {
+                req.peliculaFounded = peliculaUpdated
+                next()
+            }
+        }
+    });
+}
+
+function putPais(req, res){
+    Pelicula.findById(req.params.peliculaId, function(err, peliculaActualizada){
+        if(err){
+            res.status(500).send({message: 'Error interno del servidor', err: err})
+        } else {
+            res.status(200).send({viejo:req.peliculaFounded, nuevo:peliculaActualizada})
+        }
+    });
+}

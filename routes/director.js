@@ -14,5 +14,10 @@ api.post('/director',
 api.get('/directores/:paisId?',
         DirectorController.initGetDirectores,
         DirectorController.getDirectores);
+api.delete('/director/:directorId?',
+    DirectorController.initDelete,
+    DirectorController.findPeliculas,
+    DirectorController.deletePeliculas,
+    DirectorController.deleteDirector);
 
-module.exports = api;    
+module.exports = api;

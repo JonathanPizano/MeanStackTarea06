@@ -1,0 +1,55 @@
+{
+    "nombre":"Inoshiro",
+    "apellidoP":"Honda",
+    "descripcion":"Director de Godzilla",
+    "pais":"5940c6f33fe965175c560bee"
+}
+
+{
+    "nombre":"Akira",
+    "apellidoP":"Kurosawa",
+    "descripcion":"Este es japones",
+    "pais":"5940c6f33fe965175c560bee"
+}
+
+{
+    "numero":"123",
+    "nombre":"Los siete samurais",
+    "duracion":"207 minutos",
+    "director":"594346c95e5da126c0890010"
+}
+
+{
+    "numero":"123",
+    "nombre":"Rashomon",
+    "duracion":"88 minutos",
+    "director":"594346c95e5da126c0890010"
+}
+
+{
+    "numero":"123",
+    "nombre":"Godzilla",
+    "duracion":"98 minutos",
+    "director":"59433fad80125a2228a54ad1"
+}
+
+{
+    "numero":"123",
+    "nombre":"King Kong vs Godzilla",
+    "duracion":"98 minutos",
+    "director":"59433fad80125a2228a54ad1"
+}
+
+{
+    "numero":"321",
+    "nombre":"Pacific Rim",
+    "duracion":"98 minutos",
+    "director":"5940af58fdb03e129ccace18"
+}
+
+{
+    "numero":"321",
+    "nombre":"El laberinto del Fauno",
+    "duracion":"120 minutos",
+    "director":"5940af58fdb03e129ccace18"
+}
