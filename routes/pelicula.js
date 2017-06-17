@@ -20,5 +20,9 @@ api.put('/pelicula/:peliculaId?',
     PeliculaController.midPutPel,
     PeliculaController.almostPutPel,
     PeliculaController.putPelicula);
+api.delete('/pelicula/:peliculaId?',
+    PeliculaController.initDeletePel,
+    PeliculaController.deletePais);
+
 
 module.exports = api;

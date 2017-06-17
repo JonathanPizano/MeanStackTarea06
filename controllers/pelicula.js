@@ -210,6 +210,31 @@ function putPelicula(req, res){
 
 ///////////////////////////////
 
+function initDeletePel(req, res, next){
+    if(!req.params.peliculaId){
+        res.status(409).send({message: 'Por favor envía un Id de pelicula'})
+    } else {
+        if(!mongoose.Types.ObjectId.isValid(req.params.peliculaId)){
+            res.status(409).send({message: 'Id invalido'})
+        } else {
+            next()
+        }
+    }
+}
+
+function deletePais(req, res){
+    Pelicula.findByIdAndRemove(req.params.peliculaId).exec()
+        .then((removedPelicula) => {
+            if(removedPelicula) {
+                res.status(200).send({removedPelicula: removedPelicula});
+            } else {
+                console.log(req.params.peliculaId)
+                console.log(removedPelicula)
+                res.status(200).send({message: 'La pelicula con identificador ' + req.params.peliculaId + ' no existe en BD'});
+            }
+        })
+}
+
 module.exports = {
     initPostPel,
     midPostPel,
@@ -220,5 +245,7 @@ module.exports = {
     initPutPel,
     midPutPel,
     almostPutPel,
-    putPelicula
+    putPelicula,
+    initDeletePel,
+    deletePais
 }
